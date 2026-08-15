@@ -17,62 +17,62 @@ namespace LTDLLesson01
             {
                 new Student(
                     "001",
-                    "Nguyen Van An",
-                    new DateTime(2005, 1, 10),
-                    "Nam",
-                    "an@gmail.com",
+                    "Nguyen Thi Hoa",
+                    new DateTime(2010, 11, 10),
+                    "Nu",
+                    "Hoa@gmail.com",
                     "0123456789",
                     "CNTT",
-                    8.5,
-                    "Đang học"
+                    8.9,
+                    "Đang hoc"
                 ),
 
                 new Student(
                     "002",
-                    "Tran Thi Binh",
-                    new DateTime(2005, 5, 20),
+                    "Nguyen Thanh Binh",
+                    new DateTime(2008, 5, 20),
                     "Nu",
                     "binh@gmail.com",
                     "0123456790",
-                    "Ke toan",
-                    7.2,
-                    "Đang học"
+                    "Dien",
+                    8.8,
+                    "Đang hoc"
                 ),
 
                 new Student(
                     "003",
-                    "Le Van Cuong",
-                    new DateTime(2004, 8, 15),
+                    "Le Van Chuong",
+                    new DateTime(2009, 8, 15),
                     "Nam",
-                    "cuong@gmail.com",
+                    "chuong@gmail.com",
                     "0123456791",
                     "CNTT",
                     9.1,
-                    "Đang học"
+                    "Đang hoc"
                 ),
 
                 new Student(
                     "004",
-                    "Pham Thi Dung",
+                    "Pham Van Dung",
                     new DateTime(2005, 3, 12),
-                    "Nu",
+                    "Nam",
                     "dung@gmail.com",
                     "0123456792",
-                    "Marketing",
-                    6.8,
+                    "Kinh Te",
+                    7.8,
                     "Bao luu"
                 ),
 
                 new Student(
                     "005",
-                    "Hoang Van Em",
+                    "Tran Thu Van",
                     new DateTime(2004, 11, 5),
                     "Nam",
-                    "em@gmail.com",
+                    "van@gmail.com",
                     "0123456793",
                     "CNTT",
                     9.1,
-                    "Đang học"
+                    "Đang hoc"
                 )
             };
 
