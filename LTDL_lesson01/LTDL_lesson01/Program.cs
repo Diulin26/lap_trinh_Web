@@ -185,76 +185,109 @@ namespace LTDLLesson01
         {
             Console.WriteLine("===== THEM SINH VIEN =====");
 
-            Console.Write("Nhap ma sinh vien: ");
-            string mssv = Console.ReadLine();
+            string mssv;
 
-            if (string.IsNullOrWhiteSpace(mssv))
+            do
             {
-                Console.WriteLine("Ma sinh vien khong duoc de trong!");
-                return;
+                Console.Write("Nhap ma sinh vien: ");
+                mssv = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(mssv))
+                {
+                    Console.WriteLine("Ma sinh vien khong duoc de trong!");
+                }
+                else if (students.Any(x => x.mssv == mssv))
+                {
+                    Console.WriteLine("Ma sinh vien da ton tai!");
+                    mssv = "";
+                }
+
+            } while (string.IsNullOrWhiteSpace(mssv));
+
+
+            string name;
+
+            do
+            {
+                Console.Write("Nhap ho ten: ");
+                name = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    Console.WriteLine("Ho ten khong duoc de trong!");
+                }
+
+            } while (string.IsNullOrWhiteSpace(name));
+
+
+            DateTime ngaysinh;
+
+            while (true)
+            {
+                Console.Write("Nhap ngay sinh (yyyy-MM-dd): ");
+
+                if (DateTime.TryParse(
+                    Console.ReadLine(),
+                    out ngaysinh))
+                {
+                    break;
+                }
+
+                Console.WriteLine(
+                    "Ngay sinh khong hop le, vui long nhap lai!");
             }
 
-            if (students.Any(x => x.mssv == mssv))
-            {
-                Console.WriteLine("Ma sinh vien da ton tai!");
-                return;
-            }
-
-            Console.Write("Nhap ho ten: ");
-            string name = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                Console.WriteLine("Ho ten khong duoc de trong!");
-                return;
-            }
-
-            Console.Write("Nhap ngay sinh (yyyy-MM-dd): ");
-
-            if (!DateTime.TryParse(
-                Console.ReadLine(),
-                out DateTime ngaysinh))
-            {
-                Console.WriteLine("Ngay sinh khong hop le!");
-                return;
-            }
 
             Console.Write("Nhap gioi tinh: ");
             string gioiTinh = Console.ReadLine();
 
-            Console.Write("Nhap email: ");
-            string email = Console.ReadLine();
 
-            if (string.IsNullOrWhiteSpace(email))
+            string email;
+
+            do
             {
-                Console.WriteLine("Email khong duoc de trong!");
-                return;
-            }
+                Console.Write("Nhap email: ");
+                email = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(email))
+                {
+                    Console.WriteLine("Email khong duoc de trong!");
+                }
+
+            } while (string.IsNullOrWhiteSpace(email));
+
 
             Console.Write("Nhap so dien thoai: ");
             string soDienThoai = Console.ReadLine();
 
+
             Console.Write("Nhap nganh hoc: ");
             string nganhHoc = Console.ReadLine();
 
-            Console.Write("Nhap diem trung binh: ");
 
-            if (!double.TryParse(
-                Console.ReadLine(),
-                out double diemTrungBinh))
+            double diemTrungBinh;
+
+            while (true)
             {
-                Console.WriteLine("Diem trung binh khong hop le!");
-                return;
+                Console.Write("Nhap diem trung binh: ");
+
+                if (double.TryParse(
+                    Console.ReadLine(),
+                    out diemTrungBinh)
+                    && diemTrungBinh >= 0
+                    && diemTrungBinh <= 10)
+                {
+                    break;
+                }
+
+                Console.WriteLine(
+                    "Diem trung binh phai tu 0 den 10, vui long nhap lai!");
             }
 
-            if (diemTrungBinh < 0 || diemTrungBinh > 10)
-            {
-                Console.WriteLine("Diem trung binh phai tu 0 den 10!");
-                return;
-            }
 
             Console.Write("Nhap trang thai hoc tap: ");
             string trangThaiHocTap = Console.ReadLine();
+
 
             Student student = new Student(
                 mssv,
