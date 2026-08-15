@@ -363,8 +363,17 @@ namespace LTDLLesson01
             Console.Write("Nhap ma sinh vien: ");
             string mssv = Console.ReadLine();
 
+            if (string.IsNullOrWhiteSpace(mssv))
+            {
+                Console.WriteLine("Ma sinh vien khong duoc de trong!");
+                return;
+            }
+
             Student student =
-                students.FirstOrDefault(x => x.mssv == mssv);
+                students.FirstOrDefault(x =>
+                    x.mssv.Equals(
+                        mssv,
+                        StringComparison.OrdinalIgnoreCase));
 
             if (student == null)
             {
@@ -372,6 +381,7 @@ namespace LTDLLesson01
                 return;
             }
 
+            Console.WriteLine("Da tim thay sinh vien:");
             PrintStudent(student);
         }
 
@@ -385,27 +395,42 @@ namespace LTDLLesson01
             Console.Write("Nhap ho ten can tim: ");
             string keyword = Console.ReadLine();
 
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                Console.WriteLine(
+                    "Tu khoa tim kiem khong duoc de trong!");
+                return;
+            }
+
             var result = students
                 .Where(x =>
                     x.name.Contains(
-                        keyword,
+                        keyword.Trim(),
                         StringComparison.OrdinalIgnoreCase))
+                .OrderBy(x => x.name)
                 .ToList();
 
             if (result.Count == 0)
             {
-                Console.WriteLine("Khong tim thay sinh vien.");
+                Console.WriteLine(
+                    "Khong tim thay sinh vien phu hop.");
                 return;
             }
 
-            Console.WriteLine("Ket qua tim kiem:");
+            Console.WriteLine(
+                "Tim thay " +
+                result.Count +
+                " sinh vien:");
 
             foreach (Student student in result)
             {
                 Console.WriteLine(
-                    student.mssv + " - " +
-                    student.name + " - " +
-                    student.NganhHoc + " - " +
+                    student.mssv +
+                    " - " +
+                    student.name +
+                    " - " +
+                    student.NganhHoc +
+                    " - Diem: " +
                     student.DiemTrungBinh
                 );
             }
