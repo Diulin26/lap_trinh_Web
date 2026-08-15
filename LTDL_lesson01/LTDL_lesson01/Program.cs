@@ -644,9 +644,6 @@ namespace LTDLLesson01
                 .OrderBy(x => x.name)
                 .ToList();
 
-            Console.WriteLine(
-                "Danh sach sinh vien sau khi sap xep theo ho ten:");
-
             foreach (Student student in result)
             {
                 Console.WriteLine(
@@ -670,9 +667,6 @@ namespace LTDLLesson01
                 .OrderByDescending(x => x.DiemTrungBinh)
                 .ThenBy(x => x.name)
                 .ToList();
-
-            Console.WriteLine(
-                "Danh sach sinh vien sau khi sap xep theo diem giam dan:");
 
             foreach (Student student in result)
             {
@@ -707,11 +701,6 @@ namespace LTDLLesson01
                 return;
             }
 
-            Console.WriteLine(
-                "Co " +
-                result.Count +
-                " sinh vien co diem tu 8 tro len:");
-
             foreach (Student student in result)
             {
                 Console.WriteLine(
@@ -745,13 +734,7 @@ namespace LTDLLesson01
                 .OrderBy(x => x.name)
                 .ToList();
 
-            Console.WriteLine(
-                "Diem cao nhat: " +
-                maxScore);
-
-            Console.WriteLine(
-                "So sinh vien dat diem cao nhat: " +
-                result.Count);
+            Console.WriteLine("Diem cao nhat: " + maxScore);
 
             foreach (Student student in result)
             {
@@ -781,9 +764,23 @@ namespace LTDLLesson01
             double average =
                 students.Average(x => x.DiemTrungBinh);
 
+            double highest =
+                students.Max(x => x.DiemTrungBinh);
+
+            double lowest =
+                students.Min(x => x.DiemTrungBinh);
+
             Console.WriteLine(
                 "Diem trung binh cua lop: " +
                 average.ToString("F2"));
+
+            Console.WriteLine(
+                "Diem cao nhat: " +
+                highest.ToString("F2"));
+
+            Console.WriteLine(
+                "Diem thap nhat: " +
+                lowest.ToString("F2"));
         }
 
 
@@ -793,9 +790,17 @@ namespace LTDLLesson01
         {
             Console.WriteLine("===== THONG KE THEO NGANH =====");
 
+            if (students.Count == 0)
+            {
+                Console.WriteLine("Danh sach dang rong.");
+                return;
+            }
+
             var result = students
                 .GroupBy(x => x.NganhHoc)
                 .OrderBy(x => x.Key);
+
+            int total = 0;
 
             foreach (var group in result)
             {
@@ -804,7 +809,14 @@ namespace LTDLLesson01
                     ": " +
                     group.Count() +
                     " sinh vien");
+
+                total += group.Count();
             }
+
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine(
+                "Tong so sinh vien: " +
+                total);
         }
 
 
@@ -814,9 +826,17 @@ namespace LTDLLesson01
         {
             Console.WriteLine("===== THONG KE THEO TRANG THAI =====");
 
+            if (students.Count == 0)
+            {
+                Console.WriteLine("Danh sach dang rong.");
+                return;
+            }
+
             var result = students
                 .GroupBy(x => x.TrangThaiHocTap)
                 .OrderBy(x => x.Key);
+
+            int total = 0;
 
             foreach (var group in result)
             {
@@ -825,7 +845,14 @@ namespace LTDLLesson01
                     ": " +
                     group.Count() +
                     " sinh vien");
+
+                total += group.Count();
             }
+
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine(
+                "Tong so sinh vien: " +
+                total);
         }
     }
 }
