@@ -479,7 +479,6 @@ namespace LTDLLesson01
             Console.WriteLine();
             Console.WriteLine("===== NHAP THONG TIN MOI =====");
 
-
             string name;
 
             do
@@ -641,16 +640,23 @@ namespace LTDLLesson01
         {
             Console.WriteLine("===== SAP XEP THEO HO TEN =====");
 
-            students.Sort((a, b) =>
-                string.Compare(
-                    a.name,
-                    b.name,
-                    StringComparison.OrdinalIgnoreCase));
+            var result = students
+                .OrderBy(x => x.name)
+                .ToList();
 
             Console.WriteLine(
-                "Da sap xep sinh vien theo ho ten.");
+                "Danh sach sinh vien sau khi sap xep theo ho ten:");
 
-            DisplayStudents(students);
+            foreach (Student student in result)
+            {
+                Console.WriteLine(
+                    student.mssv +
+                    " - " +
+                    student.name +
+                    " - " +
+                    student.DiemTrungBinh
+                );
+            }
         }
 
 
@@ -660,13 +666,24 @@ namespace LTDLLesson01
         {
             Console.WriteLine("===== SAP XEP THEO DIEM =====");
 
-            students.Sort((a, b) =>
-                b.DiemTrungBinh.CompareTo(a.DiemTrungBinh));
+            var result = students
+                .OrderByDescending(x => x.DiemTrungBinh)
+                .ThenBy(x => x.name)
+                .ToList();
 
             Console.WriteLine(
-                "Da sap xep sinh vien theo diem giam dan.");
+                "Danh sach sinh vien sau khi sap xep theo diem giam dan:");
 
-            DisplayStudents(students);
+            foreach (Student student in result)
+            {
+                Console.WriteLine(
+                    student.mssv +
+                    " - " +
+                    student.name +
+                    " - Diem: " +
+                    student.DiemTrungBinh
+                );
+            }
         }
 
 
@@ -679,6 +696,8 @@ namespace LTDLLesson01
 
             var result = students
                 .Where(x => x.DiemTrungBinh >= 8)
+                .OrderByDescending(x => x.DiemTrungBinh)
+                .ThenBy(x => x.name)
                 .ToList();
 
             if (result.Count == 0)
@@ -688,11 +707,18 @@ namespace LTDLLesson01
                 return;
             }
 
+            Console.WriteLine(
+                "Co " +
+                result.Count +
+                " sinh vien co diem tu 8 tro len:");
+
             foreach (Student student in result)
             {
                 Console.WriteLine(
-                    student.mssv + " - " +
-                    student.name + " - " +
+                    student.mssv +
+                    " - " +
+                    student.name +
+                    " - " +
                     student.DiemTrungBinh
                 );
             }
@@ -716,16 +742,24 @@ namespace LTDLLesson01
 
             var result = students
                 .Where(x => x.DiemTrungBinh == maxScore)
+                .OrderBy(x => x.name)
                 .ToList();
 
             Console.WriteLine(
-                "Diem cao nhat: " + maxScore);
+                "Diem cao nhat: " +
+                maxScore);
+
+            Console.WriteLine(
+                "So sinh vien dat diem cao nhat: " +
+                result.Count);
 
             foreach (Student student in result)
             {
                 Console.WriteLine(
-                    student.mssv + " - " +
-                    student.name + " - " +
+                    student.mssv +
+                    " - " +
+                    student.name +
+                    " - " +
                     student.DiemTrungBinh
                 );
             }
