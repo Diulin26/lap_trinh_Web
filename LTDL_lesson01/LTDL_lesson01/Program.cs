@@ -85,6 +85,8 @@ namespace LTDLLesson01
                 Console.Write("Nhap lua chon: ");
                 choice = Console.ReadLine();
 
+                Console.WriteLine();
+
                 switch (choice)
                 {
                     case "1":
@@ -140,11 +142,15 @@ namespace LTDLLesson01
                         break;
 
                     case "14":
-                        Console.WriteLine("Ban da ket thuc chuong trinh.");
+                        Console.WriteLine(
+                            "Ban da ket thuc chuong trinh.");
                         break;
 
                     default:
-                        Console.WriteLine("Sai chuc nang, vui long chon lai!");
+                        Console.WriteLine(
+                            "Lua chon khong hop le!");
+                        Console.WriteLine(
+                            "Vui long chon tu 1 den 14.");
                         break;
                 }
 
@@ -187,61 +193,70 @@ namespace LTDLLesson01
 
             string mssv;
 
-            do
+            while (true)
             {
                 Console.Write("Nhap ma sinh vien: ");
                 mssv = Console.ReadLine();
 
                 if (string.IsNullOrWhiteSpace(mssv))
                 {
-                    Console.WriteLine("Ma sinh vien khong duoc de trong!");
+                    Console.WriteLine(
+                        "Ma sinh vien khong duoc de trong!");
+                    continue;
                 }
-                else if (students.Any(x =>
+
+                mssv = mssv.Trim();
+
+                if (students.Any(x =>
                     x.mssv.Equals(
-                        mssv.Trim(),
+                        mssv,
                         StringComparison.OrdinalIgnoreCase)))
                 {
-                    Console.WriteLine("Ma sinh vien da ton tai!");
-                    mssv = "";
+                    Console.WriteLine(
+                        "Ma sinh vien da ton tai!");
+                    continue;
                 }
 
-            } while (string.IsNullOrWhiteSpace(mssv));
-
-            mssv = mssv.Trim();
+                break;
+            }
 
 
             string name;
 
-            do
+            while (true)
             {
                 Console.Write("Nhap ho ten: ");
                 name = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(name))
+                if (!string.IsNullOrWhiteSpace(name))
                 {
-                    Console.WriteLine("Ho ten khong duoc de trong!");
+                    name = name.Trim();
+                    break;
                 }
 
-            } while (string.IsNullOrWhiteSpace(name));
-
-            name = name.Trim();
+                Console.WriteLine(
+                    "Ho ten khong duoc de trong!");
+            }
 
 
             DateTime ngaysinh;
 
             while (true)
             {
-                Console.Write("Nhap ngay sinh (yyyy-MM-dd): ");
+                Console.Write(
+                    "Nhap ngay sinh (yyyy-MM-dd): ");
+
+                string input = Console.ReadLine();
 
                 if (DateTime.TryParse(
-                    Console.ReadLine(),
+                    input,
                     out ngaysinh))
                 {
                     break;
                 }
 
                 Console.WriteLine(
-                    "Ngay sinh khong hop le, vui long nhap lai!");
+                    "Ngay sinh khong hop le!");
             }
 
 
@@ -251,19 +266,21 @@ namespace LTDLLesson01
 
             string email;
 
-            do
+            while (true)
             {
                 Console.Write("Nhap email: ");
                 email = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(email))
+                if (!string.IsNullOrWhiteSpace(email)
+                    && email.Contains("@"))
                 {
-                    Console.WriteLine("Email khong duoc de trong!");
+                    email = email.Trim();
+                    break;
                 }
 
-            } while (string.IsNullOrWhiteSpace(email));
-
-            email = email.Trim();
+                Console.WriteLine(
+                    "Email khong hop le!");
+            }
 
 
             Console.Write("Nhap so dien thoai: ");
@@ -278,10 +295,13 @@ namespace LTDLLesson01
 
             while (true)
             {
-                Console.Write("Nhap diem trung binh: ");
+                Console.Write(
+                    "Nhap diem trung binh (0-10): ");
+
+                string input = Console.ReadLine();
 
                 if (double.TryParse(
-                    Console.ReadLine(),
+                    input,
                     out diemTrungBinh)
                     && diemTrungBinh >= 0
                     && diemTrungBinh <= 10)
@@ -290,12 +310,15 @@ namespace LTDLLesson01
                 }
 
                 Console.WriteLine(
-                    "Diem trung binh phai tu 0 den 10, vui long nhap lai!");
+                    "Diem phai nam trong khoang tu 0 den 10!");
             }
 
 
-            Console.Write("Nhap trang thai hoc tap: ");
-            string trangThaiHocTap = Console.ReadLine();
+            Console.Write(
+                "Nhap trang thai hoc tap: ");
+
+            string trangThaiHocTap =
+                Console.ReadLine();
 
 
             Student student = new Student(
@@ -312,7 +335,9 @@ namespace LTDLLesson01
 
             students.Add(student);
 
-            Console.WriteLine("Them sinh vien thanh cong!");
+            Console.WriteLine();
+            Console.WriteLine(
+                "Them sinh vien thanh cong!");
         }
 
 
@@ -320,20 +345,27 @@ namespace LTDLLesson01
 
         static void DisplayStudents(List<Student> students)
         {
-            Console.WriteLine("===== DANH SACH SINH VIEN =====");
+            Console.WriteLine(
+                "===== DANH SACH SINH VIEN =====");
 
             if (students.Count == 0)
             {
-                Console.WriteLine("Danh sach sinh vien dang rong.");
+                Console.WriteLine(
+                    "Danh sach sinh vien dang rong.");
                 return;
             }
+
+            Console.WriteLine(
+                "Tong so sinh vien: " +
+                students.Count);
 
             foreach (Student student in students)
             {
                 PrintStudent(student);
             }
 
-            Console.WriteLine("------------------------------------------");
+            Console.WriteLine(
+                "==========================================");
         }
 
 
@@ -341,40 +373,60 @@ namespace LTDLLesson01
 
         static void PrintStudent(Student student)
         {
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine("Ma SV: " + student.mssv);
-            Console.WriteLine("Ho ten: " + student.name);
+            Console.WriteLine(
+                "------------------------------------------");
+
+            Console.WriteLine(
+                "Ma SV: " + student.mssv);
+
+            Console.WriteLine(
+                "Ho ten: " + student.name);
+
             Console.WriteLine(
                 "Ngay sinh: " +
-                student.Ngaysinh?.ToString("dd/MM/yyyy")
-            );
-            Console.WriteLine("Gioi tinh: " + student.GioiTinh);
-            Console.WriteLine("Email: " + student.Email);
-            Console.WriteLine("So dien thoai: " + student.SoDienThoai);
-            Console.WriteLine("Nganh hoc: " + student.NganhHoc);
+                student.Ngaysinh?.ToString("dd/MM/yyyy"));
+
+            Console.WriteLine(
+                "Gioi tinh: " +
+                student.GioiTinh);
+
+            Console.WriteLine(
+                "Email: " +
+                student.Email);
+
+            Console.WriteLine(
+                "So dien thoai: " +
+                student.SoDienThoai);
+
+            Console.WriteLine(
+                "Nganh hoc: " +
+                student.NganhHoc);
+
             Console.WriteLine(
                 "Diem trung binh: " +
-                student.DiemTrungBinh
-            );
+                student.DiemTrungBinh.ToString("F2"));
+
             Console.WriteLine(
                 "Trang thai: " +
-                student.TrangThaiHocTap
-            );
+                student.TrangThaiHocTap);
         }
 
 
         // ================= TIM THEO MA =================
 
-        static void FindStudentById(List<Student> students)
+        static void FindStudentById(
+            List<Student> students)
         {
-            Console.WriteLine("===== TIM SINH VIEN THEO MA =====");
+            Console.WriteLine(
+                "===== TIM SINH VIEN THEO MA =====");
 
             Console.Write("Nhap ma sinh vien: ");
             string mssv = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(mssv))
             {
-                Console.WriteLine("Ma sinh vien khong duoc de trong!");
+                Console.WriteLine(
+                    "Ma sinh vien khong duoc de trong!");
                 return;
             }
 
@@ -386,28 +438,35 @@ namespace LTDLLesson01
 
             if (student == null)
             {
-                Console.WriteLine("Khong tim thay sinh vien.");
+                Console.WriteLine(
+                    "Khong tim thay sinh vien.");
                 return;
             }
 
-            Console.WriteLine("Da tim thay sinh vien:");
+            Console.WriteLine(
+                "Da tim thay sinh vien:");
+
             PrintStudent(student);
         }
 
 
         // ================= TIM GAN DUNG THEO TEN =================
 
-        static void SearchStudentByName(List<Student> students)
+        static void SearchStudentByName(
+            List<Student> students)
         {
-            Console.WriteLine("===== TIM GAN DUNG THEO HO TEN =====");
+            Console.WriteLine(
+                "===== TIM GAN DUNG THEO HO TEN =====");
 
-            Console.Write("Nhap ho ten can tim: ");
+            Console.Write(
+                "Nhap ho ten can tim: ");
+
             string keyword = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(keyword))
             {
                 Console.WriteLine(
-                    "Tu khoa tim kiem khong duoc de trong!");
+                    "Tu khoa khong duoc de trong!");
                 return;
             }
 
@@ -440,24 +499,28 @@ namespace LTDLLesson01
                     " - " +
                     student.NganhHoc +
                     " - Diem: " +
-                    student.DiemTrungBinh
-                );
+                    student.DiemTrungBinh.ToString("F2"));
             }
         }
 
 
         // ================= CAP NHAT =================
 
-        static void UpdateStudent(List<Student> students)
+        static void UpdateStudent(
+            List<Student> students)
         {
-            Console.WriteLine("===== CAP NHAT SINH VIEN =====");
+            Console.WriteLine(
+                "===== CAP NHAT SINH VIEN =====");
 
-            Console.Write("Nhap ma sinh vien can cap nhat: ");
+            Console.Write(
+                "Nhap ma sinh vien can cap nhat: ");
+
             string mssv = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(mssv))
             {
-                Console.WriteLine("Ma sinh vien khong duoc de trong!");
+                Console.WriteLine(
+                    "Ma sinh vien khong duoc de trong!");
                 return;
             }
 
@@ -469,36 +532,44 @@ namespace LTDLLesson01
 
             if (student == null)
             {
-                Console.WriteLine("Khong tim thay sinh vien.");
+                Console.WriteLine(
+                    "Khong tim thay sinh vien.");
                 return;
             }
 
-            Console.WriteLine("Thong tin sinh vien hien tai:");
+            Console.WriteLine(
+                "Thong tin sinh vien hien tai:");
+
             PrintStudent(student);
 
             Console.WriteLine();
-            Console.WriteLine("===== NHAP THONG TIN MOI =====");
+            Console.WriteLine(
+                "===== NHAP THONG TIN MOI =====");
+
 
             string name;
 
-            do
+            while (true)
             {
                 Console.Write("Ho ten moi: ");
                 name = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(name))
+                if (!string.IsNullOrWhiteSpace(name))
                 {
-                    Console.WriteLine("Ho ten khong duoc de trong!");
+                    break;
                 }
 
-            } while (string.IsNullOrWhiteSpace(name));
+                Console.WriteLine(
+                    "Ho ten khong duoc de trong!");
+            }
 
 
             DateTime ngaysinh;
 
             while (true)
             {
-                Console.Write("Ngay sinh moi (yyyy-MM-dd): ");
+                Console.Write(
+                    "Ngay sinh moi (yyyy-MM-dd): ");
 
                 if (DateTime.TryParse(
                     Console.ReadLine(),
@@ -508,42 +579,54 @@ namespace LTDLLesson01
                 }
 
                 Console.WriteLine(
-                    "Ngay sinh khong hop le, vui long nhap lai!");
+                    "Ngay sinh khong hop le!");
             }
 
 
-            Console.Write("Gioi tinh moi: ");
+            Console.Write(
+                "Gioi tinh moi: ");
+
             string gioiTinh = Console.ReadLine();
 
 
             string email;
 
-            do
+            while (true)
             {
                 Console.Write("Email moi: ");
                 email = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(email))
+                if (!string.IsNullOrWhiteSpace(email)
+                    && email.Contains("@"))
                 {
-                    Console.WriteLine("Email khong duoc de trong!");
+                    break;
                 }
 
-            } while (string.IsNullOrWhiteSpace(email));
+                Console.WriteLine(
+                    "Email khong hop le!");
+            }
 
 
-            Console.Write("So dien thoai moi: ");
-            string soDienThoai = Console.ReadLine();
+            Console.Write(
+                "So dien thoai moi: ");
+
+            string soDienThoai =
+                Console.ReadLine();
 
 
-            Console.Write("Nganh hoc moi: ");
-            string nganhHoc = Console.ReadLine();
+            Console.Write(
+                "Nganh hoc moi: ");
+
+            string nganhHoc =
+                Console.ReadLine();
 
 
             double diemTrungBinh;
 
             while (true)
             {
-                Console.Write("Diem trung binh moi: ");
+                Console.Write(
+                    "Diem trung binh moi (0-10): ");
 
                 if (double.TryParse(
                     Console.ReadLine(),
@@ -555,12 +638,15 @@ namespace LTDLLesson01
                 }
 
                 Console.WriteLine(
-                    "Diem phai tu 0 den 10, vui long nhap lai!");
+                    "Diem phai tu 0 den 10!");
             }
 
 
-            Console.Write("Trang thai hoc tap moi: ");
-            string trangThaiHocTap = Console.ReadLine();
+            Console.Write(
+                "Trang thai hoc tap moi: ");
+
+            string trangThaiHocTap =
+                Console.ReadLine();
 
 
             student.name = name.Trim();
@@ -569,31 +655,41 @@ namespace LTDLLesson01
             student.Email = email.Trim();
             student.SoDienThoai = soDienThoai;
             student.NganhHoc = nganhHoc;
-            student.DiemTrungBinh = diemTrungBinh;
-            student.TrangThaiHocTap = trangThaiHocTap;
+            student.DiemTrungBinh =
+                diemTrungBinh;
+            student.TrangThaiHocTap =
+                trangThaiHocTap;
 
 
             Console.WriteLine();
-            Console.WriteLine("Cap nhat sinh vien thanh cong!");
+            Console.WriteLine(
+                "Cap nhat sinh vien thanh cong!");
 
             Console.WriteLine();
-            Console.WriteLine("Thong tin sau khi cap nhat:");
+            Console.WriteLine(
+                "Thong tin sau khi cap nhat:");
+
             PrintStudent(student);
         }
 
 
         // ================= XOA =================
 
-        static void DeleteStudent(List<Student> students)
+        static void DeleteStudent(
+            List<Student> students)
         {
-            Console.WriteLine("===== XOA SINH VIEN =====");
+            Console.WriteLine(
+                "===== XOA SINH VIEN =====");
 
-            Console.Write("Nhap ma sinh vien can xoa: ");
+            Console.Write(
+                "Nhap ma sinh vien can xoa: ");
+
             string mssv = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(mssv))
             {
-                Console.WriteLine("Ma sinh vien khong duoc de trong!");
+                Console.WriteLine(
+                    "Ma sinh vien khong duoc de trong!");
                 return;
             }
 
@@ -605,17 +701,23 @@ namespace LTDLLesson01
 
             if (student == null)
             {
-                Console.WriteLine("Khong tim thay sinh vien.");
+                Console.WriteLine(
+                    "Khong tim thay sinh vien.");
                 return;
             }
 
             Console.WriteLine();
-            Console.WriteLine("Sinh vien se bi xoa:");
+            Console.WriteLine(
+                "Thong tin sinh vien:");
+
             PrintStudent(student);
 
             Console.WriteLine();
-            Console.Write("Ban co chac muon xoa? (Y/N): ");
-            string confirm = Console.ReadLine();
+            Console.Write(
+                "Ban co chac muon xoa? (Y/N): ");
+
+            string confirm =
+                Console.ReadLine();
 
             if (confirm.Equals(
                 "Y",
@@ -636,9 +738,11 @@ namespace LTDLLesson01
 
         // ================= SAP XEP THEO TEN =================
 
-        static void SortByName(List<Student> students)
+        static void SortByName(
+            List<Student> students)
         {
-            Console.WriteLine("===== SAP XEP THEO HO TEN =====");
+            Console.WriteLine(
+                "===== SAP XEP THEO HO TEN =====");
 
             var result = students
                 .OrderBy(x => x.name)
@@ -651,20 +755,22 @@ namespace LTDLLesson01
                     " - " +
                     student.name +
                     " - " +
-                    student.DiemTrungBinh
-                );
+                    student.DiemTrungBinh.ToString("F2"));
             }
         }
 
 
         // ================= SAP XEP THEO DIEM =================
 
-        static void SortByScore(List<Student> students)
+        static void SortByScore(
+            List<Student> students)
         {
-            Console.WriteLine("===== SAP XEP THEO DIEM =====");
+            Console.WriteLine(
+                "===== SAP XEP THEO DIEM =====");
 
             var result = students
-                .OrderByDescending(x => x.DiemTrungBinh)
+                .OrderByDescending(
+                    x => x.DiemTrungBinh)
                 .ThenBy(x => x.name)
                 .ToList();
 
@@ -675,29 +781,31 @@ namespace LTDLLesson01
                     " - " +
                     student.name +
                     " - Diem: " +
-                    student.DiemTrungBinh
-                );
+                    student.DiemTrungBinh.ToString("F2"));
             }
         }
 
 
         // ================= DIEM TU 8 TRO LEN =================
 
-        static void DisplayStudentsAbove8(List<Student> students)
+        static void DisplayStudentsAbove8(
+            List<Student> students)
         {
             Console.WriteLine(
                 "===== SINH VIEN CO DIEM TU 8 TRO LEN =====");
 
             var result = students
-                .Where(x => x.DiemTrungBinh >= 8)
-                .OrderByDescending(x => x.DiemTrungBinh)
+                .Where(x =>
+                    x.DiemTrungBinh >= 8)
+                .OrderByDescending(
+                    x => x.DiemTrungBinh)
                 .ThenBy(x => x.name)
                 .ToList();
 
             if (result.Count == 0)
             {
                 Console.WriteLine(
-                    "Khong co sinh vien nao co diem tu 8 tro len.");
+                    "Khong co sinh vien nao.");
                 return;
             }
 
@@ -708,33 +816,39 @@ namespace LTDLLesson01
                     " - " +
                     student.name +
                     " - " +
-                    student.DiemTrungBinh
-                );
+                    student.DiemTrungBinh.ToString("F2"));
             }
         }
 
 
         // ================= DIEM CAO NHAT =================
 
-        static void DisplayTopStudents(List<Student> students)
+        static void DisplayTopStudents(
+            List<Student> students)
         {
-            Console.WriteLine("===== SINH VIEN CO DIEM CAO NHAT =====");
+            Console.WriteLine(
+                "===== SINH VIEN CO DIEM CAO NHAT =====");
 
             if (students.Count == 0)
             {
-                Console.WriteLine("Danh sach dang rong.");
+                Console.WriteLine(
+                    "Danh sach dang rong.");
                 return;
             }
 
             double maxScore =
-                students.Max(x => x.DiemTrungBinh);
+                students.Max(
+                    x => x.DiemTrungBinh);
 
             var result = students
-                .Where(x => x.DiemTrungBinh == maxScore)
+                .Where(x =>
+                    x.DiemTrungBinh == maxScore)
                 .OrderBy(x => x.name)
                 .ToList();
 
-            Console.WriteLine("Diem cao nhat: " + maxScore);
+            Console.WriteLine(
+                "Diem cao nhat: " +
+                maxScore.ToString("F2"));
 
             foreach (Student student in result)
             {
@@ -743,35 +857,44 @@ namespace LTDLLesson01
                     " - " +
                     student.name +
                     " - " +
-                    student.DiemTrungBinh
-                );
+                    student.DiemTrungBinh.ToString("F2"));
             }
         }
 
 
         // ================= TINH DIEM TRUNG BINH =================
 
-        static void CalculateAverage(List<Student> students)
+        static void CalculateAverage(
+            List<Student> students)
         {
-            Console.WriteLine("===== DIEM TRUNG BINH CUA LOP =====");
+            Console.WriteLine(
+                "===== THONG KE DIEM =====");
 
             if (students.Count == 0)
             {
-                Console.WriteLine("Danh sach dang rong.");
+                Console.WriteLine(
+                    "Danh sach dang rong.");
                 return;
             }
 
             double average =
-                students.Average(x => x.DiemTrungBinh);
+                students.Average(
+                    x => x.DiemTrungBinh);
 
             double highest =
-                students.Max(x => x.DiemTrungBinh);
+                students.Max(
+                    x => x.DiemTrungBinh);
 
             double lowest =
-                students.Min(x => x.DiemTrungBinh);
+                students.Min(
+                    x => x.DiemTrungBinh);
 
             Console.WriteLine(
-                "Diem trung binh cua lop: " +
+                "So sinh vien: " +
+                students.Count);
+
+            Console.WriteLine(
+                "Diem trung binh: " +
                 average.ToString("F2"));
 
             Console.WriteLine(
@@ -786,13 +909,16 @@ namespace LTDLLesson01
 
         // ================= THONG KE THEO NGANH =================
 
-        static void StatisticsByMajor(List<Student> students)
+        static void StatisticsByMajor(
+            List<Student> students)
         {
-            Console.WriteLine("===== THONG KE THEO NGANH =====");
+            Console.WriteLine(
+                "===== THONG KE THEO NGANH =====");
 
             if (students.Count == 0)
             {
-                Console.WriteLine("Danh sach dang rong.");
+                Console.WriteLine(
+                    "Danh sach dang rong.");
                 return;
             }
 
@@ -800,43 +926,42 @@ namespace LTDLLesson01
                 .GroupBy(x => x.NganhHoc)
                 .OrderBy(x => x.Key);
 
-            int total = 0;
-
             foreach (var group in result)
             {
+                double average =
+                    group.Average(
+                        x => x.DiemTrungBinh);
+
                 Console.WriteLine(
                     group.Key +
                     ": " +
                     group.Count() +
-                    " sinh vien");
-
-                total += group.Count();
+                    " sinh vien" +
+                    " - DTB: " +
+                    average.ToString("F2"));
             }
-
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine(
-                "Tong so sinh vien: " +
-                total);
         }
 
 
         // ================= THONG KE THEO TRANG THAI =================
 
-        static void StatisticsByStatus(List<Student> students)
+        static void StatisticsByStatus(
+            List<Student> students)
         {
-            Console.WriteLine("===== THONG KE THEO TRANG THAI =====");
+            Console.WriteLine(
+                "===== THONG KE THEO TRANG THAI =====");
 
             if (students.Count == 0)
             {
-                Console.WriteLine("Danh sach dang rong.");
+                Console.WriteLine(
+                    "Danh sach dang rong.");
                 return;
             }
 
             var result = students
-                .GroupBy(x => x.TrangThaiHocTap)
+                .GroupBy(
+                    x => x.TrangThaiHocTap)
                 .OrderBy(x => x.Key);
-
-            int total = 0;
 
             foreach (var group in result)
             {
@@ -845,14 +970,7 @@ namespace LTDLLesson01
                     ": " +
                     group.Count() +
                     " sinh vien");
-
-                total += group.Count();
             }
-
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine(
-                "Tong so sinh vien: " +
-                total);
         }
     }
 }
