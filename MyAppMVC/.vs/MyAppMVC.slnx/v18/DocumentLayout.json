@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\HK5\\LTWeb\\MyAppMVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|d:\\hk5\\ltweb\\myappmvc\\myappmvc\\views\\democontroller1\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|solutionrelative:myappmvc\\views\\democontroller1\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|d:\\hk5\\ltweb\\myappmvc\\myappmvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|solutionrelative:myappmvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|d:\\hk5\\ltweb\\myappmvc\\myappmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|solutionrelative:myappmvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|d:\\hk5\\ltweb\\myappmvc\\myappmvc\\controllers\\democontroller1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C5E470A-51F5-45AF-A085-15B7BA7750B3}|MyAppMVC\\MyAppMVC.csproj|solutionrelative:myappmvc\\controllers\\democontroller1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MyAppMVC\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MyAppMVC\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T07:12:56.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MyAppMVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MyAppMVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-23T06:57:41.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Views\\DemoController1\\Index.cshtml",
+              "RelativeDocumentMoniker": "MyAppMVC\\Views\\DemoController1\\Index.cshtml",
+              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Views\\DemoController1\\Index.cshtml",
+              "RelativeToolTip": "MyAppMVC\\Views\\DemoController1\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-23T06:57:04.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DemoController1.cs",
+              "DocumentMoniker": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Controllers\\DemoController1.cs",
+              "RelativeDocumentMoniker": "MyAppMVC\\Controllers\\DemoController1.cs",
+              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Controllers\\DemoController1.cs",
+              "RelativeToolTip": "MyAppMVC\\Controllers\\DemoController1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T06:56:00.837Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
