@@ -1,0 +1,168 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    var accounts = ViewBag.Accounts;
+}
+
+<div class="row">
+    @foreach (var item in accounts)
+    {
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="@item.Avatar" alt="" />
+                <div class="caption">
+                    <h3>@item.Name</h3>
+                    <p>
+                        @item.Bio
+                    </p>
+                    <p>
+                        <a asp-route="profile" asp-route-id="@item.Id" class="btn btn-success btn-block">Profile</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="row">
+
+    <!-- Avatar 01 -->
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Avatar/01.png" alt="Avatar 01">
+
+            <div class="caption">
+                <h3>Avatar name</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel, magni?
+                </p>
+
+                <p>
+                    <a href="#" class="btn btn-success btn-block">
+                        Profile
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Avatar 02 -->
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Avatar/02.png" alt="Avatar 02">
+
+            <div class="caption">
+                <h3>Avatar name</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel, magni?
+                </p>
+
+                <p>
+                    <a href="#" class="btn btn-success btn-block">
+                        Profile
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Avatar 03 -->
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Avatar/03.png" alt="Avatar 03">
+
+            <div class="caption">
+                <h3>Avatar name</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel, magni?
+                </p>
+
+                <p>
+                    <a href="#" class="btn btn-success btn-block">
+                        Profile
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row">
+
+    <!-- Avatar 04 -->
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Avatar/04.png" alt="Avatar 04">
+
+            <div class="caption">
+                <h3>Avatar name</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel, magni?
+                </p>
+
+                <p>
+                    <a href="#" class="btn btn-success btn-block">
+                        Profile
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Avatar 05 -->
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Avatar/05.png" alt="Avatar 05">
+
+            <div class="caption">
+                <h3>Avatar name</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel, magni?
+                </p>
+
+                <p>
+                    <a href="#" class="btn btn-success btn-block">
+                        Profile
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Avatar 06 -->
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="~/Avatar/06.png" alt="Avatar 06">
+
+            <div class="caption">
+                <h3>Avatar name</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vel, magni?
+                </p>
+
+                <p>
+                    <a href="#" class="btn btn-success btn-block">
+                        Profile
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

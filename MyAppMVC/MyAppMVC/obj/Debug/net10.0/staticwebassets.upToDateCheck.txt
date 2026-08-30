@@ -1,3 +1,9 @@
+wwwroot\Avatar\01.png
+wwwroot\Avatar\02.png
+wwwroot\Avatar\03.png
+wwwroot\Avatar\04.png
+wwwroot\Avatar\05.png
+wwwroot\Avatar\06.png
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
