@@ -1,0 +1,11 @@
+@model LTDLLesson06Models.Models.Ltdl_User
+
+<h2>Details User</h2>
+
+<p><strong>ID:</strong> @Model.LtdlId</p>
+<p><strong>Họ tên:</strong> @Model.LtdlName</p>
+<p><strong>Địa chỉ:</strong> @Model.LtdlAddress</p>
+<p><strong>Email:</strong> @Model.LtdlEmail</p>
+
+<a class="btn" asp-action="Edit" asp-route-id="@Model.LtdlId">Edit</a>
+<a class="btn" asp-action="Index">Back to List</a>

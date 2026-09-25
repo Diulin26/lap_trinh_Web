@@ -1,0 +1,26 @@
+@model LTDLLesson06Models.Models.Ltdl_Login
+
+<h2>Model Binding - Login</h2>
+
+@if (ViewBag.Message != null)
+{
+    <p class="text-danger">@ViewBag.Message</p>
+}
+
+<form asp-action="Login" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label asp-for="LtdlUserName">UserName</label>
+        <input asp-for="LtdlUserName" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LtdlPassword">Password</label>
+        <input asp-for="LtdlPassword" type="password" />
+    </div>
+
+    <button class="btn" type="submit">Submit</button>
+</form>
+
+<p>Thông tin mẫu: Peter / pass@123</p>

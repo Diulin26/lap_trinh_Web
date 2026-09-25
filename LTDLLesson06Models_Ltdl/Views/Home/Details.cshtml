@@ -1,0 +1,9 @@
+@model LTDLLesson06Models.Models.LtdlMember
+<h1>Details</h1>
+<p><b>LtdlMemberId:</b> @Model.LtdlMemberId</p>
+<p><b>LtdlMemberUserName:</b> @Model.LtdlMemberUserName</p>
+<p><b>LtdlMemberPassword:</b> @Model.LtdlMemberPassword</p>
+<p><b>LtdlMemberEmail:</b> @Model.LtdlMemberEmail</p>
+<p><b>LtdlMemberFullName:</b> @Model.LtdlMemberFullName</p>
+<a asp-action="Edit" asp-route-id="@Model.LtdlMemberId">Sửa</a> |
+<a asp-action="Index">Back to List</a>

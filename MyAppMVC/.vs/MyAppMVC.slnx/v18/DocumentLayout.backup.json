@@ -58,8 +58,7 @@
               "RelativeToolTip": "MyAppMVC\\Views\\Account\\Profile.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-30T11:32:01.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-30T11:32:01.815Z"
             },
             {
               "$type": "Document",
@@ -67,12 +66,11 @@
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Program.cs",
               "RelativeDocumentMoniker": "MyAppMVC\\Program.cs",
-              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Program.cs*",
-              "RelativeToolTip": "MyAppMVC\\Program.cs*",
+              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Program.cs",
+              "RelativeToolTip": "MyAppMVC\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-30T11:06:31.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-30T11:06:31.573Z"
             },
             {
               "$type": "Document",
@@ -106,10 +104,9 @@
               "RelativeDocumentMoniker": "MyAppMVC\\Views\\Account\\Index.cshtml",
               "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Views\\Account\\Index.cshtml",
               "RelativeToolTip": "MyAppMVC\\Views\\Account\\Index.cshtml",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAAAJ0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvxUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-30T10:26:48.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-30T10:26:48.081Z"
             },
             {
               "$type": "Document",
@@ -117,12 +114,11 @@
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "MyAppMVC\\Controllers\\AccountController.cs",
-              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Controllers\\AccountController.cs*",
-              "RelativeToolTip": "MyAppMVC\\Controllers\\AccountController.cs*",
-              "ViewState": "AgIAADMAAAAAAAAAAAAuwDcAAAAmAAAAAAAAAA==",
+              "ToolTip": "D:\\HK5\\LTWeb\\MyAppMVC\\MyAppMVC\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "MyAppMVC\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAYwHIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-30T10:26:09.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-30T10:26:09.694Z"
             },
             {
               "$type": "Document",
@@ -146,8 +142,7 @@
               "RelativeToolTip": "MyAppMVC\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAACIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-08-23T06:57:41.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-08-23T06:57:41.44Z"
             },
             {
               "$type": "Document",

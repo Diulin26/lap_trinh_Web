@@ -1,0 +1,35 @@
+@model IEnumerable<LTDLLesson06Models.Models.Ltdl_User>
+
+<h2>Danh sách User</h2>
+
+<p>
+    <a class="btn" asp-action="Create">Thêm User</a>
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Họ tên</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.LtdlId</td>
+            <td>@user.LtdlName</td>
+            <td>@user.LtdlAddress</td>
+            <td>@user.LtdlEmail</td>
+            <td>
+                <a class="btn" asp-action="Details" asp-route-id="@user.LtdlId">Details</a>
+                <a class="btn" asp-action="Edit" asp-route-id="@user.LtdlId">Edit</a>
+                <a class="btn" asp-action="Delete" asp-route-id="@user.LtdlId">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

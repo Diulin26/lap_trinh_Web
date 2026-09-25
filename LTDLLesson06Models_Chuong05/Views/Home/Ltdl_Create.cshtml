@@ -1,0 +1,29 @@
+@model LTDLLesson06Models.Models.Ltdl_User
+
+<h2>Create User</h2>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="LtdlName">Họ tên</label>
+        <input asp-for="LtdlName" />
+        <span asp-validation-for="LtdlName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LtdlAddress">Địa chỉ</label>
+        <input asp-for="LtdlAddress" />
+        <span asp-validation-for="LtdlAddress" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LtdlEmail">Email</label>
+        <input asp-for="LtdlEmail" />
+        <span asp-validation-for="LtdlEmail" class="text-danger"></span>
+    </div>
+
+    <button class="btn" type="submit">Create</button>
+    <a class="btn" asp-action="Index">Back to List</a>
+</form>

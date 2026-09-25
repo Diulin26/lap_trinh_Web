@@ -1,0 +1,9 @@
+@model LTDLLesson06Models.Models.LtdlMember
+<h1>Delete</h1>
+<p>Bạn có chắc muốn xóa thành viên này không?</p>
+<p><b>@Model.LtdlMemberFullName</b> - @Model.LtdlMemberUserName</p>
+<form asp-action="DeleteConfirmed" method="post">
+<input type="hidden" asp-for="LtdlMemberId" />
+<button type="submit">Delete</button>
+<a asp-action="Index">Back to List</a>
+</form>

@@ -1,0 +1,35 @@
+@model IEnumerable<LTDLLesson06Models.Models.LtdlMember>
+
+<h1>LtdlIndex</h1>
+
+<a class="create" asp-action="Create">Create New</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>LtdlMemberId</th>
+            <th>LtdlMemberUserName</th>
+            <th>LtdlMemberPassword</th>
+            <th>LtdlMemberEmail</th>
+            <th>LtdlMemberFullName</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.LtdlMemberId</td>
+                <td>@item.LtdlMemberUserName</td>
+                <td>@item.LtdlMemberPassword</td>
+                <td>@item.LtdlMemberEmail</td>
+                <td>@item.LtdlMemberFullName</td>
+                <td class="actions">
+                    <a asp-action="Edit" asp-route-id="@item.LtdlMemberId">Sửa</a> |
+                    <a asp-action="Details" asp-route-id="@item.LtdlMemberId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.LtdlMemberId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

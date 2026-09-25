@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LTDLLesson06Models</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; color: #222; }
+        .top-nav { height: 56px; display: flex; align-items: center; gap: 24px; padding: 0 28px; border-bottom: 1px solid #ddd; }
+        .top-nav a { text-decoration: none; color: #444; }
+        .top-nav .brand { font-weight: bold; margin-right: auto; }
+        .layout { display: flex; min-height: calc(100vh - 120px); }
+        .left-menu { width: 210px; border-right: 1px solid #ddd; padding: 20px; box-sizing: border-box; }
+        .left-menu h3 { margin-top: 0; }
+        .left-menu ul { list-style: none; padding: 0; }
+        .left-menu li { margin: 14px 0; }
+        .left-menu a { text-decoration: none; color: #444; }
+        .content { flex: 1; padding: 30px; }
+        .footer { border-top: 1px solid #ddd; padding: 18px; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #f3f3f3; }
+        .btn { display: inline-block; padding: 7px 12px; border: 1px solid #bbb; border-radius: 4px; text-decoration: none; color: #222; background: #fff; margin-right: 5px; cursor: pointer; }
+        .form-group { margin-bottom: 15px; max-width: 500px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: bold; }
+        .form-group input { width: 100%; box-sizing: border-box; padding: 9px; border: 1px solid #bbb; border-radius: 4px; }
+        .text-danger { color: #c00; }
+        .validation-summary-errors { color: #c00; }
+    </style>
+</head>
+<body>
+    <partial name="Ltdl_TopNav" />
+    <div class="layout">
+        <partial name="Ltdl_LeftMenu" />
+        <main class="content">
+            @RenderBody()
+        </main>
+    </div>
+    <partial name="Ltdl_Footer" />
+</body>
+</html>

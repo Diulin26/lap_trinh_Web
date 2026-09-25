@@ -1,0 +1,13 @@
+@model LTDLLesson06Models.Models.LtdlMember
+<h1>Edit</h1>
+<div class="form-box">
+<form asp-action="Edit" method="post">
+<input type="hidden" asp-for="LtdlMemberId" />
+<div class="form-row"><label asp-for="LtdlMemberUserName"></label><input asp-for="LtdlMemberUserName" /></div>
+<div class="form-row"><label asp-for="LtdlMemberPassword"></label><input asp-for="LtdlMemberPassword" /></div>
+<div class="form-row"><label asp-for="LtdlMemberEmail"></label><input asp-for="LtdlMemberEmail" /></div>
+<div class="form-row"><label asp-for="LtdlMemberFullName"></label><input asp-for="LtdlMemberFullName" /></div>
+<button type="submit">Save</button>
+<a asp-action="Index">Back to List</a>
+</form>
+</div>

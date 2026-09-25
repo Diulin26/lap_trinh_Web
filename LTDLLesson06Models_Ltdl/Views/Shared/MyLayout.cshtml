@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>DTBLesson06Models</title>
+
+    <style>
+            body {
+                margin: 0;
+                font-family: Arial;
+            }
+
+            .top-nav {
+                height: 50px;
+                display: flex;
+                align-items: center;
+                gap: 25px;
+                padding: 0 30px;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .top-nav a {
+                    text-decoration: none;
+                    color: #555;
+                }
+
+            .layout {
+                display: flex;
+            }
+
+            .left-menu {
+                width: 200px;
+                min-height: 500px;
+                border-right: 1px solid #ddd;
+                padding: 20px;
+            }
+
+                .left-menu ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .left-menu li {
+                    margin: 15px 0;
+                }
+
+                .left-menu a {
+                    text-decoration: none;
+                    color: #555;
+                }
+
+            .content {
+                flex: 1;
+                padding: 30px;
+            }
+
+            .footer {
+                border-top: 1px solid #ddd;
+                padding: 15px;
+                text-align: center;
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Nav -->
+    <partial name="TopNav" />
+
+    <div class="layout">
+
+        <!-- Left Menu -->
+        <partial name="LeftMenu" />
+
+        <!-- Nội dung của từng View -->
+        <div class="content">
+            @RenderBody()
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <partial name="Footer" />
+
+</body>
+</html>
