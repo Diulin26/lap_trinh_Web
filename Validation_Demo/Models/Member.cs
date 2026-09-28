@@ -5,8 +5,8 @@ namespace Validation_Demo.Models
 {
 
     /// <summary>
-    /// Author:  Linh Le 
-    /// </summary>
+    /// Author:  Le thi Dieu LINh
+    /// /// </summary>
     public class Member
     {
         public int Id { get; set; }
