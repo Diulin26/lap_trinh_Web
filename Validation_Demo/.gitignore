@@ -1,0 +1,7 @@
+.git_backup/
+.vs/
+obj/
+bin/
+.bin/
+*.user
+*.suo
