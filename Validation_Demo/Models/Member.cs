@@ -4,9 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace Validation_Demo.Models
 {
 
-    /// <summary>
-    /// Author:  Le thi Dieu LINh
-    /// /// </summary>
+    
     public class Member
     {
         public int Id { get; set; }
