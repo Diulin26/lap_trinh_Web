@@ -1,0 +1,66 @@
+@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<Learner>
+<div class="ms-2 mx-2">
+    <h1>Learner List</h1>
+    @await Component.InvokeAsync("Major")
+
+    <!-- Form tìm kiếm -->
+    <form class="my-2" onsubmit="return false;" style="max-width:320px">
+        <div class="input-group">
+            <input id="keyword" class="form-control" name="keyword" type="text" placeholder="Search learner" />
+            <button id="btnSearch" class="btn btn-primary" type="button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+
+    <!-- Bảng dữ liệu + thanh nav-phân trang (partial LearnerTable) -->
+    <div id="content">
+        <partial name="LearnerTable" model="Model" />
+    </div>
+    <a asp-action="Create" class="btn btn-primary">Create New Student</a>
+</div>
+
+@section Scripts {
+    <script>
+        // Trạng thái lọc/tìm kiếm hiện tại, dùng chung cho cả 3 sự kiện
+        var current = { mid: null, keyword: null };
+
+        function loadPage(page) {
+            var data = { pageIndex: page };
+            if (current.mid) data.mid = current.mid;
+            if (current.keyword) data.keyword = current.keyword;
+            $.ajax({
+                url: "@Url.Action("LearnerFilter", "Learner")",
+                data: data,
+                success: function (response) {
+                    $("div#content").html(response);
+                }
+            });
+        }
+
+        // Click vào số trang
+        $("body").on("click", "li.page-item", function (e) {
+            loadPage($(this).attr("page"));
+        });
+
+        // Click chọn chuyên ngành (lọc, về trang 1, giữ keyword đang tìm)
+        $(".nav li").click(function (e) {
+            current.mid = $(this).attr("id");
+            loadPage(1);
+        });
+
+        // Click nút tìm kiếm (về trang 1, giữ chuyên ngành đang lọc)
+        $("button#btnSearch").click(function (e) {
+            current.keyword = $("#keyword").val();
+            loadPage(1);
+        });
+
+        // Nhấn Enter trong ô tìm kiếm
+        $("#keyword").keydown(function (e) {
+            if (e.key === "Enter") $("button#btnSearch").click();
+        });
+    </script>
+}

@@ -1,0 +1,29 @@
+@model Learner
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="ms-2 mx-2" style="max-width:480px">
+    <h1>Create Student</h1>
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label asp-for="FirstMidName" class="form-label">Tên</label>
+            <input asp-for="FirstMidName" class="form-control" />
+            <span asp-validation-for="FirstMidName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="LastName" class="form-label">Họ</label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="MajorID" class="form-label">Ngành</label>
+            <select asp-for="MajorID" class="form-select" asp-items="(SelectList)ViewBag.Majors"></select>
+        </div>
+        <div class="mb-3">
+            <label asp-for="EnrollmentDate" class="form-label">Ngày nhập học</label>
+            <input asp-for="EnrollmentDate" class="form-control" type="datetime-local" />
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </form>
+</div>
