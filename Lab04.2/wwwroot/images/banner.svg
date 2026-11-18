@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260">
+<rect width="260" height="260" fill="#1e6fd9"/>
+<rect y="150" width="260" height="110" fill="#f2f6ff"/>
+<text x="20" y="45" font-family="Arial,sans-serif" font-size="22" font-weight="bold" fill="#ffd400">ĐỔI CŨ</text>
+<text x="20" y="75" font-family="Arial,sans-serif" font-size="26" font-weight="bold" fill="#fff">LẤY MỚI</text>
+<text x="20" y="105" font-family="Arial,sans-serif" font-size="14" fill="#fff">Ưu đãi nồi chiên</text>
+<text x="20" y="130" font-family="Arial,sans-serif" font-size="24" font-weight="bold" fill="#ffd400">FASTER</text>
+<rect x="150" y="160" width="80" height="70" rx="12" fill="#222"/>
+<circle cx="190" cy="195" r="18" fill="#555"/>
+<text x="20" y="215" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#c00">2.850.000đ</text>
+</svg>

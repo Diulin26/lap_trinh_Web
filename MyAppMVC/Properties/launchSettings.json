@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "MyAppMVC": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "san-pham",
+      "applicationUrl": "https://localhost:7001;http://localhost:5001",
+      "environmentVariables": { "ASPNETCORE_ENVIRONMENT": "Development" }
+    }
+  }
+}

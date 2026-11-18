@@ -1,0 +1,51 @@
+@model List<Product>
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    var categoryNames = (Dictionary<int, string>)ViewBag.CategoryNames;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="m-0">Danh sách sản phẩm</h3>
+    <a class="btn btn-primary" asp-action="Create">+ Thêm mới</a>
+</div>
+
+<table class="table table-bordered table-hover align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>ID</th>
+            <th>Ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Danh mục</th>
+            <th class="text-end">Giá</th>
+            <th class="text-end">Giá khuyến mãi</th>
+            <th style="width:210px">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(p.Image))
+                    {
+                        <img src="~/products/@p.Image" alt="@p.Name" class="thumb" />
+                    }
+                </td>
+                <td>@p.Name</td>
+                <td>@(categoryNames.TryGetValue(p.CategoryId, out var cn) ? cn : "")</td>
+                <td class="text-end">@Format.Money(p.Price)</td>
+                <td class="text-end">@Format.Money(p.SalePrice)</td>
+                <td>
+                    <a class="btn btn-sm btn-info text-white" asp-action="Details" asp-route-id="@p.Id">Chi tiết</a>
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@p.Id">Sửa</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@p.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+        @if (!Model.Any())
+        {
+            <tr><td colspan="7" class="text-center text-muted">Chưa có sản phẩm nào.</td></tr>
+        }
+    </tbody>
+</table>

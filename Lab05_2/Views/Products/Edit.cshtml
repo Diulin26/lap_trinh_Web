@@ -1,0 +1,17 @@
+@model Product
+@{
+    ViewData["Title"] = "Sửa sản phẩm";
+}
+
+<h3 class="mb-3">Chỉnh sửa sản phẩm</h3>
+
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post" enctype="multipart/form-data" novalidate>
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <partial name="_ProductForm" model="Model" />
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+    <a class="btn btn-secondary" asp-action="Index">Quay lại</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

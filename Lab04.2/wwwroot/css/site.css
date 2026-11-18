@@ -1,0 +1,6 @@
+html { font-size: 14px; }
+.panel-head { background: #337ab7; color: #fff; padding: 6px 12px; font-size: 0.9rem; }
+.panel-box { border: 1px solid #337ab7; }
+.card-img-top { height: 220px; object-fit: contain; padding: 8px; }
+.site-footer { background: #333; color: #fff; }
+.site-footer p { color: #ddd; }

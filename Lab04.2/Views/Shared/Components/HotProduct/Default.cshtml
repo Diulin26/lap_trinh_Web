@@ -1,0 +1,16 @@
+@model List<Product>
+
+<div class="panel-head">Sản phẩm bán chạy</div>
+<div class="row mt-3">
+    @foreach (var p in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 text-center">
+                <img src="~/images/@p.Image" class="card-img-top" alt="@p.Name" />
+                <div class="card-body">
+                    <p class="card-text">@p.Name</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
