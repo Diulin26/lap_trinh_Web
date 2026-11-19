@@ -1,0 +1,46 @@
+﻿@model SachCreateVM
+@{
+    ViewData["Title"] = "Thêm sách";
+}
+
+<style>
+    .form-row { margin-bottom: 14px }
+    .form-row label { display: block; font-weight: 600; margin-bottom: 4px }
+    .form-row input, .form-row select { width: 100%; padding: 7px 10px; border: 1px solid #c5d3d8; border-radius: 4px }
+    .field-validation-error, .validation-summary-errors { color: #c00; font-size: 13px }
+</style>
+
+<div class="section-head"><h3>Thêm sách mới</h3></div>
+
+<form asp-action="Create" method="post" style="background:#fff;padding:20px;border-radius:6px;max-width:600px">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-row">
+        <label asp-for="MaTl"></label>
+        <select asp-for="MaTl" asp-items="(SelectList)ViewBag.DsTheLoai">
+            <option value=""> Chọn thể loại</option>
+        </select>
+        <span asp-validation-for="MaTl"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="TenSach"></label>
+        <input asp-for="TenSach" />
+        <span asp-validation-for="TenSach"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="Gia"></label>
+        <input asp-for="Gia" />
+        <span asp-validation-for="Gia"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="Anh"></label>
+        <input asp-for="Anh" placeholder="vd: Img_1.jpg" />
+        <span asp-validation-for="Anh"></span>
+    </div>
+    <button type="submit" class="btn-buy">Create</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
