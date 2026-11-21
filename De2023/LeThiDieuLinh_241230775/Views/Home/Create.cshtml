@@ -1,0 +1,46 @@
+﻿@model HangHoaCreateVM
+@{
+    ViewData["Title"] = "Thêm hàng hóa";
+}
+
+<style>
+    .form-row {
+        margin-bottom: 10px
+    }
+
+        .form-row label {
+            display: block
+        }
+
+    .field-validation-error, .validation-summary-errors {
+        color: #c00
+    }
+</style>
+
+<div>Lê Thị Diệu Linh</div>
+<div>Thêm Hàng Hóa Mới</div>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-row">
+        <label asp-for="MaLoai"></label>
+        <select asp-for="MaLoai" asp-items="(SelectList)ViewBag.DsLoai"></select>
+    </div>
+    <div class="form-row">
+        <label asp-for="TenHang"></label>
+        <input asp-for="TenHang" />
+        <span asp-validation-for="TenHang"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="Gia"></label>
+        <input asp-for="Gia" />
+        <span asp-validation-for="Gia"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="Anh"></label>
+        <input asp-for="Anh" />
+        <span asp-validation-for="Anh"></span>
+    </div>
+    <input type="submit" value="Create" />
+</form>

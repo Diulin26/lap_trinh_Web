@@ -1,0 +1,42 @@
+﻿@inject QLHangHoaContext db
+@{
+    var dsloai = db.LoaiHangs.ToList();
+}
+<div class="header">
+	<div class="header_top">
+		<div class="logo">
+			<a asp-controller="Home" asp-action="Index"><img src="images/logo.png" alt="" /></a>
+		</div>
+		<div class="cart">
+			<p>
+				Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
+				0 item(s) - $0.00
+				<ul class="dropdown">
+					<li>you have no items in your Shopping cart</li>
+				</ul>
+			</div>
+		</p>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="header_bottom">
+	<div class="menu">
+		<ul>
+			<li class="active"><a asp-controller="Home" asp-action="Index">Le Thi Dieu Linh</a></li>
+            @foreach (var loai in dsloai)
+			{
+				<li><a href="#" class="menu-loai" data-url="@Url.Action("HangHoaTheoLoai", "Home", new { maloai = loai.MaLoai })">@loai.TenLoai</a></li>				
+			}
+			<div class="clear"></div>
+        </ul>
+		</div>
+		<div class="search_box">
+<form>
+	<input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+	<input type="button" value="">
+</form>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+
