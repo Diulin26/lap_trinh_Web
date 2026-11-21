@@ -1,0 +1,59 @@
+﻿@model TaiSanVM
+@{
+    ViewData["Title"] = "Thêm tài sản";
+}
+
+<style>
+    .form-row {
+        margin-bottom: 14px
+    }
+
+        .form-row label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px
+        }
+
+        .form-row input, .form-row select {
+            width: 100%;
+            padding: 7px 10px;
+            border: 1px solid #c5d3d8;
+            border-radius: 4px
+        }
+
+    .field-validation-error, .validation-summary-errors {
+        color: #c00;
+        font-size: 13px
+    }
+</style>
+
+<div class="section-head"><h3>Thêm tài sản mới</h3></div>
+
+<form asp-action="Create" method="post" style="background:#fff;padding:20px;border-radius:6px;max-width:600px">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-row">
+        <label asp-for="MaLoai"></label>
+        <select asp-for="MaLoai" asp-items="(SelectList)ViewBag.DsLoai"></select>
+    </div>
+    <div class="form-row">
+        <label asp-for="TenTs"></label>
+        <input asp-for="TenTs" />
+        <span asp-validation-for="TenTs"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="NguyenGia"></label>
+        <input asp-for="NguyenGia" />
+        <span asp-validation-for="NguyenGia"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="Anh"></label>
+        <input asp-for="Anh" placeholder="vd: Img_1.jpg" />
+        <span asp-validation-for="Anh"></span>
+    </div>
+    <button type="submit" class="btn-buy">Create</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

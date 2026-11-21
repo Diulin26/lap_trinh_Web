@@ -1,0 +1,60 @@
+﻿@model TaiSanVM
+@{
+    ViewData["Title"] = "Sửa tài sản";
+}
+
+<style>
+    .form-row {
+        margin-bottom: 14px
+    }
+
+        .form-row label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px
+        }
+
+        .form-row input, .form-row select {
+            width: 100%;
+            padding: 7px 10px;
+            border: 1px solid #c5d3d8;
+            border-radius: 4px
+        }
+
+    .field-validation-error, .validation-summary-errors {
+        color: #c00;
+        font-size: 13px
+    }
+</style>
+
+<div class="section-head"><h3>Sửa thông tin tài sản</h3></div>
+
+<form asp-action="Edit" method="post" style="background:#fff;padding:20px;border-radius:6px;max-width:600px">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input type="hidden" asp-for="MaTs" />
+
+    <div class="form-row">
+        <label asp-for="MaLoai"></label>
+        <select asp-for="MaLoai" asp-items="(SelectList)ViewBag.DsLoai"></select>
+    </div>
+    <div class="form-row">
+        <label asp-for="TenTs"></label>
+        <input asp-for="TenTs" />
+        <span asp-validation-for="TenTs"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="NguyenGia"></label>
+        <input asp-for="NguyenGia" />
+        <span asp-validation-for="NguyenGia"></span>
+    </div>
+    <div class="form-row">
+        <label asp-for="Anh"></label>
+        <input asp-for="Anh" />
+        <span asp-validation-for="Anh"></span>
+    </div>
+    <button type="submit" class="btn-buy">Save</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
